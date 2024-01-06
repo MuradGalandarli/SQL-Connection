@@ -26,6 +26,7 @@ namespace DataAccessLayer
 
         public DbSet<InfoData> InfoDatas { get; set; }
         public DbSet<InfoData> InfoDatasa { get; set; }
+        public DbSet<InfoData> InfoDatasaa { get; set; }
     }
 }
 
