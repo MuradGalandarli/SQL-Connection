@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class initDatabase : Migration
+    public partial class mig1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +13,9 @@ namespace DataAccessLayer.Migrations
                 name: "InfoDatas",
                 columns: table => new
                 {
-                    InfoId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    External = table.Column<int>(type: "int", nullable: true)
+                    InfoId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    External = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

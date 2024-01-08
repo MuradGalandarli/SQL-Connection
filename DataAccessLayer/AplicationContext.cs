@@ -46,7 +46,7 @@ namespace DataAccessLayer
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
            
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            optionsBuilder.UseNpgsql(_configuration.GetConnectionString("DefaultConnection"));
         }
 
         public DbSet<InfoData> InfoDatas { get; set; }
